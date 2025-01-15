@@ -1,0 +1,57 @@
+:root {
+  --fontBody: 1rem;
+  --fontWeight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-size: var(--fontBody);
+  font-weight: var(--fontWeight);
+  font-optical-sizing: auto;
+  letter-spacing: 0px;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+main {
+  margin: 48px;
+}
+
+h1 {
+  text-align: center;
+}
+
+article {
+  flex: 1;
+  width: 100%;
+  padding: 32px;
+}
+
+.input-container {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+pre {
+  padding: 12px;
+  background-color: rgb(224, 224, 224);
+  border: 1px solid black;
+  border-radius: 3px;
+  overflow: auto;
+}
