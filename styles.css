@@ -36,6 +36,12 @@ h1 {
   text-align: center;
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
 article {
   flex: 1;
   width: 100%;
