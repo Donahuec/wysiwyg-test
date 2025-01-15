@@ -7,18 +7,21 @@
     <link
       href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.bubble.css"
       rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css"
+      rel="stylesheet" />
 
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main>
-      <h1>WYSIWYG Tests</h1>
+      <h1>WYSIWYG Test with Quill</h1>
       <nav>
         <a href="https://github.com/Donahuec/wysiwyg-test">Github</a>
         <a href="https://quilljs.com/">Quill</a>
       </nav>
       <article>
-        <h2>Quill</h2>
+        <h2>Select Text to See Toolbar</h2>
         <div>
           <div class="input-container" id="quill"></div>
         </div>
@@ -29,6 +32,20 @@
         <section>
           <h3>HTML Out (replace chars)</h3>
           <pre id="outc"></pre>
+        </section>
+      </article>
+      <article>
+        <h2>Toolbar always visible</h2>
+        <div>
+          <div class="input-container" id="quillSnow"></div>
+        </div>
+        <section>
+          <h3>HTML Out</h3>
+          <pre id="outsnow"></pre>
+        </section>
+        <section>
+          <h3>HTML Out (replace chars)</h3>
+          <pre id="outsnowc"></pre>
         </section>
       </article>
     </main>
