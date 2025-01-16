@@ -55,10 +55,14 @@ quills.forEach((quill) => {
 
 function update(quill, id) {
   let html = quill.getSemanticHTML(0);
+  let length = quill.getLength();
+  let text = quill.getText(0);
   document.querySelector(`#${id}-display`).innerHTML = html;
   document.querySelector(`#${id}-html`).textContent = html;
   document.querySelector(`#${id}-formatted`).textContent =
     removeWhiteSpaceChar(html);
+  document.querySelector(`#${id}-length`).textContent = length;
+  document.querySelector(`#${id}-text`).textContent = text;
 }
 
 function updateBubbleQuill() {

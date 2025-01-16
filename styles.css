@@ -53,16 +53,15 @@ h1 {
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 2px;
+  margin-bottom: 16px;
 }
 
 h1,
 h2 {
   text-align: center;
-  margin-bottom: 16px;
 }
 
 h3 {
-  padding-top: 16px;
   line-height: 1.5;
 }
 
@@ -75,6 +74,10 @@ article {
   border-radius: 12px;
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.163);
   background-color: white;
+}
+
+section {
+  margin-block: 16px;
 }
 
 nav {
@@ -124,10 +127,6 @@ nav a {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
-
-/* .ql-toolbar.ql-snow:has(+ .ql-container:not(:focus-within)) {
-  visibility: hidden;
-} */
 
 .ql-toolbar.ql-snow:has(+ .ql-container:focus-within) {
   border-color: rgb(37, 60, 65);
