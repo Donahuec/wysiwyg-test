@@ -13,18 +13,14 @@
   padding: 0;
 }
 
-body,
-html {
-  height: 100%;
-}
-
 body {
   font-family: var(--fontFamily);
   font-size: var(--fontBody);
   font-weight: var(--fontWeight);
   font-optical-sizing: auto;
   letter-spacing: 0px;
-  background-color: rgb(103, 151, 151);
+  background-color: rgb(37, 60, 65);
+  background-image: linear-gradient(rgb(103, 151, 151), rgb(37, 60, 65));
 }
 
 .sr-only {
@@ -42,10 +38,10 @@ main {
 }
 
 header {
-  background-color: white;
   color: white;
   padding: 48px;
   background-color: rgb(37, 60, 65);
+
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.163);
 }
 
@@ -87,6 +83,7 @@ nav {
   text-align: center;
   gap: 32px;
   width: min(100%, 800px);
+  margin-top: 64px;
 }
 
 nav a {
@@ -98,14 +95,16 @@ nav a {
   letter-spacing: 1px;
   text-decoration: none;
   border: 1px solid transparent;
-  padding: 12px;
+  padding: 4px;
   border-radius: 12px;
+  background-color: rgb(103 151 151 / 0.1);
   &:hover,
   &:focus-visible {
-    background-color: hsl(0 0% 100% / 20%);
-    border-color: white;
-    outline-color: white;
+    background-color: rgb(103 151 151 / 0.2);
+    border-color: rgb(103, 151, 151);
     outline-offset: 4px;
+    outline-color: rgb(103, 151, 151);
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.163);
   }
 }
 
