@@ -1,14 +1,10 @@
-function removeWhiteSpaceChar(text) {
-  return text.replace(/\&nbsp;/g, " ");
-}
-
 const toolbar = ["bold", "italic", "underline"];
 const formats = ["bold", "italic", "underline"];
 const placeholder = "Placeholder";
 const bindings = {
   // This will overwrite the default binding also named 'tab'
   tab: {
-    key: 9,
+    key: "Tab",
     handler: function () {
       // tab to the next quill editor
       const editorElements = document.querySelectorAll(".ql-editor");
@@ -22,9 +18,15 @@ const bindings = {
       editorElements[nextIndex].focus();
     },
   },
+  escape: {
+    key: "Escape",
+    handler: function () {
+      this.quill.blur();
+    },
+  },
 };
 
-const quillBubble = new Quill("#bubble", {
+const config = {
   placeholder,
   formats,
   modules: {
@@ -33,25 +35,23 @@ const quillBubble = new Quill("#bubble", {
       bindings,
     },
   },
+};
+
+// The bubble theme pops up when selecting text
+const quillBubble = new Quill("#bubble", {
+  ...config,
   theme: "bubble",
 });
 
+//the snow theme is always visible
 const quillSnow = new Quill("#snow", {
-  placeholder,
-  formats,
-  modules: {
-    toolbar,
-    keyboard: {
-      bindings,
-    },
-  },
+  ...config,
   theme: "snow",
 });
 
-let quills = document.querySelectorAll(".ql-editor");
-quills.forEach((quill) => {
-  quill.tabIndex = 0;
-});
+function removeWhiteSpaceChar(text) {
+  return text.replace(/\&nbsp;/g, " ");
+}
 
 function update(quill, id) {
   let html = quill.getSemanticHTML(0);

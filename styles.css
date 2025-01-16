@@ -1,10 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("./quill-styles.css");
 
 :root {
   --fontBody: 1rem;
   --fontWeight: 400;
   --fontFamily: "Inter", serif;
   --fontFamilyMono: "Source Code Pro", serif;
+
+  --lightTealHSL: 180 19% 50%;
+  --lightTeal: hsl(var(--lightTealHSL));
+
+  --darkTealHSL: 191 27% 20%;
+  --darkTeal: hsl(var(--darkTealHSL));
+
+  --boxShadow: 3px 5px 10px rgba(0, 0, 0, 0.163);
+
+  --spSmall: 8px;
+  --spMedium: 16px;
+  --spLarge: 32px;
+  --spXLarge: 64px;
+
+  --borderRadius: 6px;
+  --borderRadiusLarge: 12px;
+
+  --borderColor: hsl(0, 0%, 67%);
 }
 
 * {
@@ -18,31 +37,20 @@ body {
   font-size: var(--fontBody);
   font-weight: var(--fontWeight);
   font-optical-sizing: auto;
-  letter-spacing: 0px;
-  background-color: rgb(37, 60, 65);
-  background-image: linear-gradient(rgb(103, 151, 151), rgb(37, 60, 65));
-}
-
-.sr-only {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  background-color: var(--darkTeal);
+  background-image: linear-gradient(var(--lightTeal), var(--darkTeal));
 }
 
 main {
-  padding: 48px;
-  padding-top: 12px;
+  padding: var(--spLarge);
+  padding-top: var(--spMedium);
 }
 
 header {
   color: white;
-  padding: 48px;
-  background-color: rgb(37, 60, 65);
-
-  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.163);
+  padding: var(--spLarge);
+  background-color: var(--darkTeal);
+  box-shadow: var(--boxShadow);
 }
 
 h1 {
@@ -54,7 +62,7 @@ h1 {
 h1,
 h2 {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: var(--spMedium);
 }
 
 h3 {
@@ -63,17 +71,17 @@ h3 {
 
 article {
   margin-inline: auto;
-  margin-block: 32px;
+  margin-block: var(--spLarge);
   flex: 1;
   width: min(100%, 800px);
-  padding: 32px;
-  border-radius: 12px;
-  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.163);
+  padding: var(--spLarge);
+  border-radius: var(--borderRadiusLarge);
+  box-shadow: var(--boxShadow);
   background-color: white;
 }
 
 section {
-  margin-block: 16px;
+  margin-block: var(--spMedium);
 }
 
 nav {
@@ -81,9 +89,9 @@ nav {
   display: flex;
   justify-content: center;
   text-align: center;
-  gap: 32px;
+  gap: var(--spLarge);
   width: min(100%, 800px);
-  margin-top: 64px;
+  margin-top: var(--spXLarge);
 }
 
 nav a {
@@ -95,64 +103,24 @@ nav a {
   letter-spacing: 1px;
   text-decoration: none;
   border: 1px solid transparent;
-  padding: 4px;
-  border-radius: 12px;
-  background-color: rgb(103 151 151 / 0.1);
+  padding: var(--spSmall);
+  border-radius: var(--borderRadiusLarge);
+  background-color: hsl(var(--lightTealHSL) / 0.1);
   &:hover,
   &:focus-visible {
-    background-color: rgb(103 151 151 / 0.2);
-    border-color: rgb(103, 151, 151);
+    background-color: hsl(var(--lightTealHSL) / 0.2);
+    border-color: var(--lightTeal);
     outline-offset: 4px;
-    outline-color: rgb(103, 151, 151);
-    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.163);
+    outline-color: var(--lightTeal);
+    box-shadow: var(--boxShadow);
   }
-}
-
-.ql-toolbar.ql-snow {
-  border-radius: 3px;
-  border-bottom: 0;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
-}
-
-/* Hide Toolbar unles clicked into selection */
-/* .ql-toolbar.ql-snow:has(+ .ql-container:not(:focus-within)) {
-  visibility: hidden;
-} */
-
-.ql-toolbar.ql-snow + .ql-container.ql-snow {
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-}
-
-.ql-toolbar.ql-snow:has(+ .ql-container:focus-within) {
-  border-color: rgb(37, 60, 65);
-}
-
-.ql-toolbar.ql-snow + .ql-container.ql-snow:focus-within {
-  border-color: rgb(37, 60, 65);
-}
-
-.ql-container.ql-bubble {
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  &:focus-within {
-    border-color: rgb(37, 60, 65);
-  }
-}
-
-.input-container {
-  width: 100%;
 }
 
 pre,
 .display {
-  padding: 12px;
-  background-color: rgb(235, 235, 235);
-  border: 1px solid #696969;
-  border-radius: 3px;
+  padding: var(--spSmall);
+  background-color: hsl(var(--lightTealHSL) / 0.2);
+  border-radius: var(--borderRadius);
   overflow: auto;
 }
 

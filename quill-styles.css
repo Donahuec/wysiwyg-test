@@ -1,0 +1,38 @@
+.ql-toolbar.ql-snow {
+  border-radius: var(--borderRadius);
+  border-bottom: 0;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+/* Hide Toolbar unless clicked into selection */
+/* .ql-toolbar.ql-snow:has(+ .ql-container:not(:focus-within)) {
+  visibility: hidden;
+} */
+
+.ql-toolbar.ql-snow {
+  border-color: var(--borderColor);
+}
+
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+  border-radius: var(--borderRadius);
+  border: 1px solid var(--borderColor);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.ql-toolbar.ql-snow:has(+ .ql-container:focus-within) {
+  border-color: var(--darkTeal);
+}
+
+.ql-toolbar.ql-snow + .ql-container.ql-snow:focus-within {
+  border-color: var(--darkTeal);
+}
+
+.ql-container.ql-bubble {
+  border-radius: var(--borderRadius);
+  border: 1px solid var(--borderColor);
+  &:focus-within {
+    border-color: var(--darkTeal);
+  }
+}
