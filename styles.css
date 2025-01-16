@@ -91,7 +91,7 @@ nav {
   text-align: center;
   gap: var(--spLarge);
   width: min(100%, 800px);
-  margin-top: var(--spXLarge);
+  margin-top: var(--spLarge);
 }
 
 nav a {
