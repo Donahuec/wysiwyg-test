@@ -106,10 +106,47 @@ nav a {
   }
 }
 
+.ql-toolbar.ql-snow {
+  border-radius: 3px;
+  border-bottom: 0;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+/* Hide Toolbar unles clicked into selection */
+/* .ql-toolbar.ql-snow:has(+ .ql-container:not(:focus-within)) {
+  visibility: hidden;
+} */
+
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+/* .ql-toolbar.ql-snow:has(+ .ql-container:not(:focus-within)) {
+  visibility: hidden;
+} */
+
+.ql-toolbar.ql-snow:has(+ .ql-container:focus-within) {
+  border-color: rgb(37, 60, 65);
+}
+
+.ql-toolbar.ql-snow + .ql-container.ql-snow:focus-within {
+  border-color: rgb(37, 60, 65);
+}
+
+.ql-container.ql-bubble {
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  &:focus-within {
+    border-color: rgb(37, 60, 65);
+  }
+}
+
 .input-container {
   width: 100%;
-  border: 1px solid #696969;
-  border-radius: 3px;
 }
 
 pre,
