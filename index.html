@@ -14,38 +14,48 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
+    <header>
       <h1>WYSIWYG Test with Quill</h1>
       <nav>
         <a href="https://github.com/Donahuec/wysiwyg-test">Github</a>
         <a href="https://quilljs.com/">Quill</a>
       </nav>
+    </header>
+    <main>
       <article>
-        <h2>Select Text to See Toolbar</h2>
+        <h2>Toolbar on Select</h2>
         <div>
-          <div class="input-container" id="quill"></div>
+          <div class="input-container" id="bubble"></div>
         </div>
         <section>
-          <h3>HTML Out</h3>
-          <pre id="out"></pre>
+          <h3>Display</h3>
+          <div class="display" id="bubble-display"></div>
         </section>
         <section>
-          <h3>HTML Out (replace chars)</h3>
-          <pre id="outc"></pre>
+          <h3>HTML</h3>
+          <pre id="bubble-html"></pre>
+        </section>
+        <section>
+          <h3>HTML (replace chars)</h3>
+          <pre id="bubble-formatted"></pre>
         </section>
       </article>
       <article>
         <h2>Toolbar Always Visible</h2>
         <div>
-          <div class="input-container" id="quillSnow"></div>
+          <div class="input-container" id="snow"></div>
         </div>
         <section>
-          <h3>HTML Out</h3>
-          <pre id="outsnow"></pre>
+          <h3>Display</h3>
+          <div class="display" id="snow-display"></div>
         </section>
         <section>
-          <h3>HTML Out (replace chars)</h3>
-          <pre id="outsnowc"></pre>
+          <h3>HTML</h3>
+          <pre id="snow-html"></pre>
+        </section>
+        <section>
+          <h3>HTML (replace chars)</h3>
+          <pre id="snow-formatted"></pre>
         </section>
       </article>
     </main>

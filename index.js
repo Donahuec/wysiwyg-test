@@ -1,43 +1,52 @@
-const toolbarOptions = ["bold", "italic", "underline"];
+function removeWhiteSpaceChar(text) {
+  return text.replace(/\&nbsp;/g, " ");
+}
 
-const quill = new Quill("#quill", {
-  placeholder: "Placeholder",
-  formats: ["bold", "italic", "underline"],
+const toolbar = ["bold", "italic", "underline"];
+const formats = ["bold", "italic", "underline"];
+const placeholder = "Placeholder";
+
+const quillBubble = new Quill("#bubble", {
+  placeholder,
+  formats,
   modules: {
-    toolbar: toolbarOptions,
+    toolbar,
   },
   theme: "bubble",
 });
 
-let html = quill.getSemanticHTML(0);
-document.querySelector("#out").textContent = html;
-document.querySelector("#outc").textContent = html.replace("&nbsp;", " ");
-
-quill.on("text-change", (delta, oldDelta, source) => {
-  console.log("delta", delta);
-  console.log("olddelta", oldDelta);
-  let html = quill.getSemanticHTML(0);
-  document.querySelector("#out").textContent = html;
-  document.querySelector("#outc").textContent = html.replace("&nbsp;", " ");
-});
-
-const quillSnow = new Quill("#quillSnow", {
-  placeholder: "Placeholder",
-  formats: ["bold", "italic", "underline"],
+const quillSnow = new Quill("#snow", {
+  placeholder,
+  formats,
   modules: {
-    toolbar: toolbarOptions,
+    toolbar,
   },
   theme: "snow",
 });
 
-let htmlSnow = quillSnow.getSemanticHTML(0);
-document.querySelector("#outsnow").textContent = html;
-document.querySelector("#outsnowc").textContent = html.replace("&nbsp;", " ");
+function update(quill, id) {
+  let html = quill.getSemanticHTML(0);
+  document.querySelector(`#${id}-display`).innerHTML = html;
+  document.querySelector(`#${id}-html`).textContent = html;
+  document.querySelector(`#${id}-formatted`).textContent =
+    removeWhiteSpaceChar(html);
+}
+
+function updateBubbleQuill() {
+  update(quillBubble, "bubble");
+}
+
+function updateSnowQuill() {
+  update(quillSnow, "snow");
+}
+
+updateBubbleQuill();
+updateSnowQuill();
+
+quillBubble.on("text-change", (delta, oldDelta, source) => {
+  updateBubbleQuill();
+});
 
 quillSnow.on("text-change", (delta, oldDelta, source) => {
-  console.log("delta", delta);
-  console.log("olddelta", oldDelta);
-  let html = quillSnow.getSemanticHTML(0);
-  document.querySelector("#outsnow").textContent = html;
-  document.querySelector("#outsnowc").textContent = html.replace("&nbsp;", " ");
+  updateSnowQuill();
 });

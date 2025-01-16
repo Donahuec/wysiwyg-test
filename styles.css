@@ -1,10 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
 :root {
   --fontBody: 1rem;
   --fontWeight: 400;
+  --fontFamily: "Inter", serif;
+  --fontFamilyMono: "Source Code Pro", serif;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body,
@@ -13,10 +19,12 @@ html {
 }
 
 body {
+  font-family: var(--fontFamily);
   font-size: var(--fontBody);
   font-weight: var(--fontWeight);
   font-optical-sizing: auto;
   letter-spacing: 0px;
+  background-color: rgb(103, 151, 151);
 }
 
 .sr-only {
@@ -29,35 +37,97 @@ body {
 }
 
 main {
-  margin: 48px;
+  padding: 48px;
+  padding-top: 12px;
+}
+
+header {
+  background-color: white;
+  color: white;
+  padding: 48px;
+  background-color: rgb(37, 60, 65);
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.163);
 }
 
 h1 {
-  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+h3 {
+  padding-top: 16px;
+  line-height: 1.5;
 }
 
 article {
+  margin-inline: auto;
+  margin-block: 32px;
   flex: 1;
-  width: 100%;
+  width: min(100%, 800px);
   padding: 32px;
+  border-radius: 12px;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.163);
+  background-color: white;
+}
+
+nav {
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 32px;
+  width: min(100%, 800px);
+}
+
+nav a {
+  max-width: 25%;
+  flex: 1;
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  padding: 12px;
+  border-radius: 12px;
+  &:hover,
+  &:focus-visible {
+    background-color: hsl(0 0% 100% / 20%);
+    border-color: white;
+    outline-color: white;
+    outline-offset: 4px;
+  }
 }
 
 .input-container {
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid #696969;
   border-radius: 3px;
 }
 
-pre {
+pre,
+.display {
   padding: 12px;
-  background-color: rgb(224, 224, 224);
-  border: 1px solid black;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid #696969;
   border-radius: 3px;
   overflow: auto;
+}
+
+pre {
+  font-family: var(--fontFamilyMono);
+}
+.display {
+  p {
+    line-height: 1.25;
+    min-height: 1.25rem;
+    margin: 0;
+  }
 }
